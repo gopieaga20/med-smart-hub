@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import StatCard from '../components/dashboard/StatCard';
@@ -6,7 +5,7 @@ import PatientAppointment from '../components/dashboard/PatientAppointment';
 import TaskCard from '../components/dashboard/TaskCard';
 import ActivityFeed from '../components/dashboard/ActivityFeed';
 import AskAIButton from '../components/dashboard/AskAIButton';
-import { User, Calendar, CheckSquare, Clock, FileText, AlertCircle } from 'lucide-react';
+import { User, Calendar, CheckSquare, Clock, FileText, AlertCircle, MessageCircle } from 'lucide-react';
 
 const Index = () => {
   // Mock data for today's appointments
