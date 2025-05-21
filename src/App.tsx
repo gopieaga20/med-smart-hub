@@ -10,6 +10,7 @@ import Documentation from "./pages/Documentation";
 import Schedule from "./pages/Schedule";
 import Tasks from "./pages/Tasks";
 import Analytics from "./pages/Analytics";
+import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/analytics" element={<Analytics />} />
+          <Route path="/chat" element={<Chat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
