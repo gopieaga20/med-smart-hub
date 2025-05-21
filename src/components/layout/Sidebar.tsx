@@ -51,7 +51,7 @@ const Sidebar = () => {
         <SidebarLink to="/" icon={<Home size={18} />} label="Dashboard" />
         <SidebarLink to="/patients" icon={<User size={18} />} label="Patients" />
         <SidebarLink to="/documentation" icon={<FileText size={18} />} label="Documentation" />
-        <SidebarLink to="/calendar" icon={<Calendar size={18} />} label="Schedule" />
+        <SidebarLink to="/schedule" icon={<Calendar size={18} />} label="Schedule" />
         <SidebarLink to="/tasks" icon={<CheckSquare size={18} />} label="Tasks" />
         <SidebarLink to="/analytics" icon={<BarChart3 size={18} />} label="Analytics" />
         <SidebarLink to="/chat" icon={<MessageCircle size={18} />} label="AskAI" />
