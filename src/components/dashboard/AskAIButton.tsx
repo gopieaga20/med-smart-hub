@@ -9,7 +9,7 @@ const AskAIButton = () => {
   return (
     <button
       onClick={() => navigate('/chat')}
-      className="fixed right-6 bottom-6 bg-snapdoc-blue text-white p-4 rounded-full shadow-lg hover:bg-snapdoc-blue/90 transition-all z-50 flex items-center gap-2"
+      className="fixed right-6 bottom-6 bg-snapdoc-blue text-white p-4 rounded-full shadow-lg hover:bg-snapdoc-blue/90 hover:scale-105 transition-all z-50 flex items-center gap-2"
     >
       <MessageCircle size={20} />
       <span className="text-sm font-medium">Ask AI</span>
