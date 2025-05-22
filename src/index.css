@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 255 78% 75%;
+    --primary: 198 65% 54%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
@@ -31,31 +31,31 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 255 78% 75%;
+    --ring: 198 65% 54%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 255 78% 75%;
+    --sidebar-background: 198 65% 54%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 255 78% 75%;
-    --sidebar-accent: 255 100% 95%;
-    --sidebar-accent-foreground: 255 78% 75%;
-    --sidebar-border: 255 78% 85%;
-    --sidebar-ring: 255 78% 75%;
+    --sidebar-primary-foreground: 198 65% 54%;
+    --sidebar-accent: 198 100% 95%;
+    --sidebar-accent-foreground: 198 65% 54%;
+    --sidebar-border: 198 65% 85%;
+    --sidebar-ring: 198 65% 75%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 0 0% 15%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 0 0% 18%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 0 0% 15%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 255 78% 75%;
+    --primary: 198 65% 54%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -73,14 +73,15 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 255 78% 75%;
+    
+    --sidebar-background: 198 65% 54%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 255 78% 75%;
-    --sidebar-accent: 255 100% 95%;
-    --sidebar-accent-foreground: 255 78% 75%;
-    --sidebar-border: 255 78% 85%;
-    --sidebar-ring: 255 78% 75%;
+    --sidebar-primary-foreground: 198 65% 54%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 198 65% 54%;
+    --sidebar-border: 198 65% 45%;
+    --sidebar-ring: 198 65% 75%;
   }
 }
 
@@ -101,14 +102,14 @@
   }
   
   .metric-card {
-    @apply border rounded-xl p-4 shadow bg-white hover:shadow-md transition-all;
+    @apply border rounded-xl p-4 shadow bg-card hover:shadow-md transition-all;
   }
   
   .stat-value {
-    @apply text-2xl font-semibold text-doctor-dark;
+    @apply text-2xl font-semibold;
   }
   
   .stat-label {
-    @apply text-sm text-doctor-neutral-gray;
+    @apply text-sm text-snapdoc-neutral-gray;
   }
 }

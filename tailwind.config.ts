@@ -63,15 +63,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-        doctor: {
-          'purple': '#9b87f5',
-          'dark': '#1A1F2C',
-          'light-purple': '#D6BCFA',
-          'soft-blue': '#D3E4FD',
-          'neutral-gray': '#8E9196',
+        snapdoc: {
+          'blue': '#39A9DB',
+          'red': '#FF304F',
+          'dark': '#252525',
+          'card': '#2d2d2d',
           'light-gray': '#F1F1F1',
-          'bright-blue': '#0FA0CE',
-          'soft-green': '#F2FCE2',
+          'neutral-gray': '#8E9196',
           'alert-red': '#ea384c'
         }
 			},

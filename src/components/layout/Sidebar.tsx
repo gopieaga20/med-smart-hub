@@ -12,6 +12,7 @@ import {
   LogOut, 
   Home 
 } from 'lucide-react';
+import { ThemeToggle } from '../theme/ThemeToggle';
 
 type SidebarLinkProps = {
   to: string;
@@ -41,10 +42,13 @@ const Sidebar = () => {
   return (
     <aside className="w-64 bg-sidebar flex flex-col h-screen py-6 px-3 text-sidebar-foreground">
       <div className="flex items-center gap-2 px-4 mb-8">
-        <div className="bg-white rounded-lg p-2">
-          <span className="text-doctor-purple font-bold text-lg">Doc+</span>
+        <div className="h-10 w-10">
+          <img src="/lovable-uploads/5beece02-10c5-4085-a653-c9fe2fd0db6b.png" alt="Snapdoc Logo" className="h-full w-full object-contain" />
         </div>
-        <h1 className="font-bold text-xl">DoctorCare+</h1>
+        <h1 className="font-bold text-xl">Snapdoc</h1>
+        <div className="ml-auto">
+          <ThemeToggle />
+        </div>
       </div>
 
       <nav className="flex flex-col gap-1 flex-1">
