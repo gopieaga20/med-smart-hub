@@ -46,14 +46,14 @@
   }
 
   .dark {
-    --background: 0 0% 15%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 12%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 18%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 16%;
+    --card-foreground: 0 0% 98%;
 
     --popover: 0 0% 15%;
-    --popover-foreground: 0 0% 95%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 198 65% 54%;
     --primary-foreground: 0 0% 100%;
@@ -74,8 +74,8 @@
     --input: 198 15% 25%;
     --ring: 198 65% 50%;
     
-    --sidebar-background: 0 0% 15%;
-    --sidebar-foreground: 0 0% 95%;
+    --sidebar-background: 0 0% 12%;
+    --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 198 65% 54%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 198 65% 30%;
@@ -102,7 +102,7 @@
   }
   
   .metric-card {
-    @apply border border-snapdoc-blue/20 rounded-xl p-4 shadow bg-card hover:shadow-md transition-all;
+    @apply border border-snapdoc-blue/20 rounded-xl p-4 shadow bg-card hover:shadow-md transition-all dark:border-snapdoc-blue/30;
   }
   
   .stat-value {
@@ -115,7 +115,7 @@
   
   /* Status colors */
   .status-scheduled {
-    @apply bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300;
+    @apply bg-blue-100 text-blue-700 dark:bg-blue-900/70 dark:text-blue-300;
   }
   
   .status-in-progress {
@@ -123,11 +123,11 @@
   }
   
   .status-completed {
-    @apply bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300;
+    @apply bg-green-100 text-green-700 dark:bg-green-900/70 dark:text-green-300;
   }
   
   .status-cancelled {
-    @apply bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300;
+    @apply bg-red-100 text-red-700 dark:bg-red-900/70 dark:text-red-300;
   }
   
   .status-stable {
@@ -148,7 +148,7 @@
 
   /* Grid outlines */
   .grid-outline {
-    @apply border border-snapdoc-blue/20 rounded-xl overflow-hidden;
+    @apply border-2 border-snapdoc-blue/20 dark:border-snapdoc-blue/30 rounded-xl overflow-hidden shadow-md;
   }
   
   table {
@@ -156,10 +156,40 @@
   }
   
   table th, table td {
-    @apply border-snapdoc-blue/10 border-b;
+    @apply border-snapdoc-blue/10 dark:border-snapdoc-blue/20 border-b;
   }
   
   table thead {
-    @apply bg-snapdoc-blue/5;
+    @apply bg-snapdoc-blue/5 dark:bg-snapdoc-blue/10;
+  }
+
+  /* Dark mode specific adjustments */
+  .dark .bg-white {
+    @apply bg-card;
+  }
+
+  .dark .border {
+    @apply border-snapdoc-blue/20;
+  }
+  
+  .dark .text-doctor-neutral-gray {
+    @apply text-gray-300;
+  }
+
+  /* AskAI Interface Styles */
+  .askai-bg {
+    @apply bg-gradient-to-br from-snapdoc-blue to-snapdoc-blue/80;
+  }
+  
+  .askai-suggestion {
+    @apply bg-white/20 hover:bg-white/30 text-white rounded-lg p-2 text-sm transition-colors cursor-pointer;
+  }
+  
+  .askai-user-message {
+    @apply bg-snapdoc-blue/20 dark:bg-snapdoc-blue/30 rounded-lg p-3 max-w-[80%];
+  }
+  
+  .askai-ai-message {
+    @apply bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-3 max-w-[80%] shadow-sm;
   }
 }

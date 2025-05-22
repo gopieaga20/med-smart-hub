@@ -10,20 +10,20 @@ export function ThemeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="bg-white/10 border-transparent hover:bg-sidebar-accent hover:border-transparent">
+        <Button variant="outline" size="icon" className="bg-white/20 border-sidebar-accent/30 hover:bg-sidebar-accent hover:border-sidebar-accent/50 dark:bg-gray-700/50">
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-snapdoc-blue" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-white" />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+      <DropdownMenuContent align="end" className="bg-white dark:bg-gray-800">
+        <DropdownMenuItem onClick={() => setTheme("light")} className="cursor-pointer">
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem onClick={() => setTheme("dark")} className="cursor-pointer">
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem onClick={() => setTheme("system")} className="cursor-pointer">
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
