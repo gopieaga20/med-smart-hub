@@ -40,9 +40,9 @@ const SidebarLink = ({ to, icon, label }: SidebarLinkProps) => {
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 bg-sidebar flex flex-col h-screen py-6 px-3 text-sidebar-foreground">
+    <aside className="w-64 bg-white dark:bg-snapdoc-dark flex flex-col h-screen py-6 px-3 text-sidebar-foreground">
       <div className="flex items-center justify-between px-4 mb-8">
-        <div className="h-10 w-10 flex items-center justify-center">
+        <div className="h-10 w-10 flex items-center justify-center bg-white rounded-full p-1">
           <img src="/lovable-uploads/5beece02-10c5-4085-a653-c9fe2fd0db6b.png" alt="Snapdoc Logo" className="max-h-full max-w-full object-contain" />
         </div>
         <ThemeToggle />
