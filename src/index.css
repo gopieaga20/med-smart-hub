@@ -46,13 +46,13 @@
   }
 
   .dark {
-    --background: 0 0% 12%;
+    --background: 0 0% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 16%;
+    --card: 0 0% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 15%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 198 65% 54%;
@@ -62,7 +62,7 @@
     --secondary-foreground: 210 40% 98%;
 
     --muted: 198 20% 20%;
-    --muted-foreground: 198 20% 85%;
+    --muted-foreground: 198 20% 80%;
 
     --accent: 198 25% 25%;
     --accent-foreground: 210 40% 98%;
@@ -74,7 +74,7 @@
     --input: 198 15% 25%;
     --ring: 198 65% 50%;
     
-    --sidebar-background: 0 0% 12%;
+    --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 198 65% 54%;
     --sidebar-primary-foreground: 0 0% 100%;
@@ -106,49 +106,49 @@
   }
   
   .stat-value {
-    @apply text-2xl font-semibold;
+    @apply text-2xl font-semibold text-gray-800 dark:text-white;
   }
   
   .stat-label {
-    @apply text-sm text-snapdoc-neutral-gray dark:text-gray-300;
+    @apply text-sm text-gray-600 dark:text-gray-300;
   }
   
-  /* Status colors */
+  /* Status colors with improved visibility */
   .status-scheduled {
-    @apply bg-blue-100 text-blue-700 dark:bg-blue-900/70 dark:text-blue-300;
+    @apply bg-blue-100 text-blue-800 dark:bg-blue-900/70 dark:text-blue-200;
   }
   
   .status-in-progress {
-    @apply bg-snapdoc-blue/20 text-snapdoc-blue dark:bg-snapdoc-blue/30 dark:text-snapdoc-blue/90;
+    @apply bg-snapdoc-blue/20 text-snapdoc-blue dark:bg-snapdoc-blue/30 dark:text-blue-200;
   }
   
   .status-completed {
-    @apply bg-green-100 text-green-700 dark:bg-green-900/70 dark:text-green-300;
+    @apply bg-green-100 text-green-800 dark:bg-green-900/70 dark:text-green-200;
   }
   
   .status-cancelled {
-    @apply bg-red-100 text-red-700 dark:bg-red-900/70 dark:text-red-300;
+    @apply bg-red-100 text-red-800 dark:bg-red-900/70 dark:text-red-200;
   }
   
   .status-stable {
-    @apply text-blue-600 dark:text-blue-400;
+    @apply text-blue-700 dark:text-blue-300;
   }
   
   .status-improving {
-    @apply text-green-600 dark:text-green-400;
-  }
-  
-  .status-recovered {
     @apply text-green-700 dark:text-green-300;
   }
   
+  .status-recovered {
+    @apply text-green-800 dark:text-green-200;
+  }
+  
   .status-critical {
-    @apply text-snapdoc-alert-red dark:text-red-400;
+    @apply text-red-700 dark:text-red-300;
   }
 
-  /* Grid outlines */
+  /* Grid outlines with better visibility */
   .grid-outline {
-    @apply border-2 border-snapdoc-blue/20 dark:border-snapdoc-blue/30 rounded-xl overflow-hidden shadow-md;
+    @apply border-2 border-snapdoc-blue/30 dark:border-snapdoc-blue/40 rounded-xl overflow-hidden shadow-md;
   }
   
   table {
@@ -156,11 +156,11 @@
   }
   
   table th, table td {
-    @apply border-snapdoc-blue/10 dark:border-snapdoc-blue/20 border-b;
+    @apply border-snapdoc-blue/20 dark:border-snapdoc-blue/30 border-b text-gray-800 dark:text-gray-200;
   }
   
   table thead {
-    @apply bg-snapdoc-blue/5 dark:bg-snapdoc-blue/10;
+    @apply bg-snapdoc-blue/10 dark:bg-snapdoc-blue/20 text-gray-700 dark:text-gray-200;
   }
 
   /* Dark mode specific adjustments */
@@ -169,14 +169,53 @@
   }
 
   .dark .border {
-    @apply border-snapdoc-blue/20;
+    @apply border-snapdoc-blue/30;
   }
   
   .dark .text-doctor-neutral-gray {
     @apply text-gray-300;
   }
+  
+  /* Analytics page specific fixes */
+  .dark .text-gray-500 {
+    @apply text-gray-300;
+  }
+  
+  .dark .text-2xl.font-bold {
+    @apply text-white;
+  }
+  
+  .dark ul li {
+    @apply text-gray-300;
+  }
 
-  /* AskAI Interface Styles */
+  /* Tasks page specific fixes */
+  .dark .text-doctor-alert-red {
+    @apply text-red-400;
+  }
+  
+  .dark .text-orange-500 {
+    @apply text-amber-400;
+  }
+  
+  .dark .text-doctor-bright-blue {
+    @apply text-blue-400;
+  }
+  
+  /* Card headers for task priorities */
+  .dark .bg-red-50 {
+    @apply bg-red-900/30;
+  }
+  
+  .dark .bg-orange-50 {
+    @apply bg-amber-900/30;
+  }
+  
+  .dark .bg-blue-50 {
+    @apply bg-blue-900/30;
+  }
+
+  /* AskAI Interface Styles with improved visibility */
   .askai-bg {
     @apply bg-gradient-to-br from-snapdoc-blue to-snapdoc-blue/80;
   }
@@ -186,10 +225,31 @@
   }
   
   .askai-user-message {
-    @apply bg-snapdoc-blue/20 dark:bg-snapdoc-blue/30 rounded-lg p-3 max-w-[80%];
+    @apply bg-snapdoc-blue/20 dark:bg-snapdoc-blue/30 rounded-lg p-3 max-w-[80%] text-gray-800 dark:text-gray-100;
   }
   
   .askai-ai-message {
-    @apply bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-3 max-w-[80%] shadow-sm;
+    @apply bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-3 max-w-[80%] shadow-sm text-gray-800 dark:text-white;
+  }
+  
+  /* Analytics page weekly overview card fixes */
+  .dark .bg-purple-50 {
+    @apply bg-purple-900/30 text-purple-200;
+  }
+  
+  .dark .bg-pink-50 {
+    @apply bg-pink-900/30 text-pink-200;
+  }
+  
+  .dark .bg-blue-50 {
+    @apply bg-blue-900/30 text-blue-200;
+  }
+  
+  .dark .bg-gray-50 {
+    @apply bg-gray-800 text-gray-200;
+  }
+  
+  .dark h4.font-medium {
+    @apply text-gray-200;
   }
 }

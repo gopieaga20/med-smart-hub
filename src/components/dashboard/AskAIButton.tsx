@@ -16,7 +16,7 @@ const AskAIButton = () => {
       }}
     >
       <MessageCircle size={20} />
-      <span className="text-sm font-medium drop-shadow-sm">Ask AI</span>
+      <span className="text-sm font-medium text-white drop-shadow-md">Ask AI</span>
     </button>
   );
 };

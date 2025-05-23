@@ -17,9 +17,9 @@ interface TaskCardProps {
 
 const TaskCard = ({ task, onTaskToggle }: TaskCardProps) => {
   const priorityColors = {
-    'high': 'text-doctor-alert-red',
-    'medium': 'text-orange-500',
-    'low': 'text-doctor-bright-blue'
+    'high': 'text-red-600 dark:text-red-400',
+    'medium': 'text-amber-600 dark:text-amber-400',
+    'low': 'text-green-600 dark:text-green-400'
   };
   
   const categoryIcons = {
@@ -38,14 +38,14 @@ const TaskCard = ({ task, onTaskToggle }: TaskCardProps) => {
         {task.completed ? (
           <CheckCircle className="text-green-500" size={20} />
         ) : (
-          <div className="w-5 h-5 rounded-full border-2 border-doctor-neutral-gray" />
+          <div className="w-5 h-5 rounded-full border-2 border-doctor-neutral-gray dark:border-gray-400" />
         )}
       </div>
       <div className="flex-1">
-        <div className={`font-medium ${task.completed ? 'line-through text-doctor-neutral-gray' : ''}`}>
+        <div className={`font-medium text-gray-800 dark:text-gray-100 ${task.completed ? 'line-through text-doctor-neutral-gray dark:text-gray-400' : ''}`}>
           {task.title}
         </div>
-        <div className="text-sm text-doctor-neutral-gray flex items-center gap-2 mt-1">
+        <div className="text-sm text-doctor-neutral-gray dark:text-gray-400 flex items-center gap-2 mt-1">
           <span className="mr-1">{categoryIcons[task.category]}</span>
           {task.patientName && <span>Patient: {task.patientName}</span>}
           {task.dueTime && (
