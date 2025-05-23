@@ -12,7 +12,7 @@ import {
   LogOut, 
   Home 
 } from 'lucide-react';
-import { ThemeToggle } from '../theme/ThemeProvider';
+import { ThemeToggle } from '../theme/ThemeToggle';
 
 type SidebarLinkProps = {
   to: string;
