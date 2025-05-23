@@ -9,10 +9,9 @@ const AskAIButton = () => {
   return (
     <button
       onClick={() => navigate('/chat')}
-      className="fixed right-6 bottom-6 bg-snapdoc-blue text-white p-4 rounded-full shadow-lg hover:bg-snapdoc-blue/90 hover:scale-105 transition-all z-50 flex items-center gap-2"
+      className="fixed right-6 bottom-6 bg-primary text-white p-4 rounded-full shadow-lg hover:bg-primary/90 hover:scale-105 transition-all z-50 flex items-center gap-2"
       style={{ 
-        background: 'linear-gradient(135deg, #39A9DB, #2b7da9)', 
-        boxShadow: '0 4px 14px rgba(57, 169, 219, 0.4)'
+        boxShadow: '0 4px 14px rgba(30, 103, 185, 0.4)'
       }}
     >
       <MessageCircle size={20} />

@@ -64,13 +64,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
         snapdoc: {
-          'blue': '#39A9DB',
-          'red': '#FF304F',
-          'dark': '#252525',
+          'blue': '#1E67B9',
+          'red': '#E54C4C',
+          'green': '#14B37D',
+          'yellow': '#F5B14C',
+          'dark': '#172B4D',
           'card': '#2d2d2d',
           'light-gray': '#F1F1F1',
-          'neutral-gray': '#8E9196',
-          'alert-red': '#ea384c'
+          'neutral-gray': '#637283',
+          'alert-red': '#E54C4C'
         }
 			},
 			borderRadius: {

@@ -5,83 +5,83 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 198 65% 54%;
+    --primary: 210 79% 46%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 198 65% 54%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 79% 46%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222.2 84% 4.9%;
-    --sidebar-primary: 198 65% 54%;
+    --sidebar-background: 210 79% 46%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 210 79% 46%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 198 65% 95%;
-    --sidebar-accent-foreground: 198 65% 54%;
-    --sidebar-border: 214.3 31.8% 91.4%;
-    --sidebar-ring: 198 65% 75%;
+    --sidebar-accent: 199 89% 92%;
+    --sidebar-accent-foreground: 210 79% 46%;
+    --sidebar-border: 199 89% 84%;
+    --sidebar-ring: 199 89% 84%;
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 98%;
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222 47% 13%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 198 65% 54%;
+    --primary: 210 79% 46%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 198 25% 25%;
+    --secondary: 217 32% 25%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 198 20% 20%;
-    --muted-foreground: 198 20% 80%;
+    --muted: 217 32% 20%;
+    --muted-foreground: 215 16% 75%;
 
-    --accent: 198 25% 25%;
+    --accent: 217 32% 25%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 50.6%;
+    --destructive: 0 62% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 198 15% 25%;
-    --input: 198 15% 25%;
-    --ring: 198 65% 50%;
+    --border: 217 32% 25%;
+    --input: 217 32% 25%;
+    --ring: 210 79% 50%;
     
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 198 65% 54%;
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 79% 46%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 198 65% 30%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 198 15% 25%;
-    --sidebar-ring: 198 65% 75%;
+    --sidebar-accent: 217 32% 25%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 32% 25%;
+    --sidebar-ring: 210 79% 50%;
   }
 }
 
@@ -102,7 +102,7 @@
   }
   
   .metric-card {
-    @apply border border-snapdoc-blue/20 rounded-xl p-4 shadow bg-card hover:shadow-md transition-all dark:border-snapdoc-blue/30;
+    @apply border border-primary/20 rounded-xl p-4 shadow bg-card hover:shadow-md transition-all dark:border-primary/30;
   }
   
   .stat-value {
@@ -119,7 +119,7 @@
   }
   
   .status-in-progress {
-    @apply bg-snapdoc-blue/20 text-snapdoc-blue dark:bg-snapdoc-blue/30 dark:text-blue-200;
+    @apply bg-primary/20 text-primary dark:bg-primary/30 dark:text-blue-200;
   }
   
   .status-completed {
@@ -146,9 +146,22 @@
     @apply text-red-700 dark:text-red-300;
   }
 
+  /* Priority colors for tasks */
+  .priority-high {
+    @apply bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-200;
+  }
+  
+  .priority-medium {
+    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-200;
+  }
+  
+  .priority-low {
+    @apply bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-200;
+  }
+
   /* Grid outlines with better visibility */
   .grid-outline {
-    @apply border-2 border-snapdoc-blue/30 dark:border-snapdoc-blue/40 rounded-xl overflow-hidden shadow-md;
+    @apply border-2 border-primary/30 dark:border-primary/40 rounded-xl overflow-hidden shadow-md;
   }
   
   table {
@@ -156,11 +169,11 @@
   }
   
   table th, table td {
-    @apply border-snapdoc-blue/20 dark:border-snapdoc-blue/30 border-b text-gray-800 dark:text-gray-200;
+    @apply border-primary/20 dark:border-primary/30 border-b text-gray-800 dark:text-gray-200;
   }
   
   table thead {
-    @apply bg-snapdoc-blue/10 dark:bg-snapdoc-blue/20 text-gray-700 dark:text-gray-200;
+    @apply bg-primary/10 dark:bg-primary/20 text-gray-700 dark:text-gray-200;
   }
 
   /* Dark mode specific adjustments */
@@ -169,7 +182,7 @@
   }
 
   .dark .border {
-    @apply border-snapdoc-blue/30;
+    @apply border-primary/30;
   }
   
   .dark .text-doctor-neutral-gray {
@@ -177,11 +190,14 @@
   }
   
   /* Analytics page specific fixes */
-  .dark .text-gray-500 {
+  .dark .text-gray-500,
+  .dark .text-doctor-neutral-gray {
     @apply text-gray-300;
   }
   
-  .dark .text-2xl.font-bold {
+  .dark .text-2xl.font-bold,
+  .dark h3.font-bold,
+  .dark h4.font-medium {
     @apply text-white;
   }
   
@@ -204,20 +220,25 @@
   
   /* Card headers for task priorities */
   .dark .bg-red-50 {
-    @apply bg-red-900/30;
+    @apply bg-red-900/30 text-red-200;
   }
   
-  .dark .bg-orange-50 {
-    @apply bg-amber-900/30;
+  .dark .bg-orange-50,
+  .dark .bg-yellow-50 {
+    @apply bg-amber-900/30 text-amber-200;
   }
   
   .dark .bg-blue-50 {
-    @apply bg-blue-900/30;
+    @apply bg-blue-900/30 text-blue-200;
+  }
+  
+  .dark .bg-green-50 {
+    @apply bg-green-900/30 text-green-200;
   }
 
   /* AskAI Interface Styles with improved visibility */
   .askai-bg {
-    @apply bg-gradient-to-br from-snapdoc-blue to-snapdoc-blue/80;
+    @apply bg-gradient-to-br from-primary to-primary/80;
   }
   
   .askai-suggestion {
@@ -225,7 +246,7 @@
   }
   
   .askai-user-message {
-    @apply bg-snapdoc-blue/20 dark:bg-snapdoc-blue/30 rounded-lg p-3 max-w-[80%] text-gray-800 dark:text-gray-100;
+    @apply bg-primary/20 dark:bg-primary/30 rounded-lg p-3 max-w-[80%] text-gray-800 dark:text-gray-100;
   }
   
   .askai-ai-message {
@@ -247,9 +268,5 @@
   
   .dark .bg-gray-50 {
     @apply bg-gray-800 text-gray-200;
-  }
-  
-  .dark h4.font-medium {
-    @apply text-gray-200;
   }
 }

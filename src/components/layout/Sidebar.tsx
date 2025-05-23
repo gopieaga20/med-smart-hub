@@ -12,7 +12,7 @@ import {
   LogOut, 
   Home 
 } from 'lucide-react';
-import { ThemeToggle } from '../theme/ThemeToggle';
+import { ThemeToggle } from '../theme/ThemeProvider';
 
 type SidebarLinkProps = {
   to: string;
@@ -40,12 +40,15 @@ const SidebarLink = ({ to, icon, label }: SidebarLinkProps) => {
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 bg-white dark:bg-snapdoc-dark flex flex-col h-screen py-6 px-3 text-sidebar-foreground">
-      <div className="flex justify-center items-center px-4 mb-8">
-        <div className="h-16 w-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full p-1 border-2 border-snapdoc-blue/30 dark:border-snapdoc-blue/50">
-          <img src="/lovable-uploads/5beece02-10c5-4085-a653-c9fe2fd0db6b.png" alt="SnapDoc Logo" className="h-12 w-12 object-contain" />
+    <aside className="w-64 bg-sidebar flex flex-col h-screen py-6 px-3 text-sidebar-foreground">
+      <div className="flex justify-between items-center px-4 mb-8">
+        <div className="flex items-center">
+          <div className="h-12 w-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full p-1 border-2 border-sidebar-accent dark:border-sidebar-accent/50">
+            <img src="/lovable-uploads/5beece02-10c5-4085-a653-c9fe2fd0db6b.png" alt="SnapDoc Logo" className="h-10 w-10 object-contain" />
+          </div>
+          <span className="text-xl font-bold ml-2 text-white">SnapDoc</span>
         </div>
-        <div className="ml-auto">
+        <div>
           <ThemeToggle />
         </div>
       </div>
