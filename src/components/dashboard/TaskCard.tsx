@@ -17,6 +17,12 @@ interface TaskCardProps {
 
 const TaskCard = ({ task, onTaskToggle }: TaskCardProps) => {
   const priorityColors = {
+    'high': 'priority-high',
+    'medium': 'priority-medium',
+    'low': 'priority-low'
+  };
+  
+  const priorityTextColors = {
     'high': 'text-red-600 dark:text-red-400',
     'medium': 'text-amber-600 dark:text-amber-400',
     'low': 'text-green-600 dark:text-green-400'
@@ -30,7 +36,7 @@ const TaskCard = ({ task, onTaskToggle }: TaskCardProps) => {
   };
 
   return (
-    <div className="flex items-center gap-3 p-3 border-b last:border-b-0">
+    <div className="flex items-center gap-3 p-3 border-b last:border-b-0 hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
       <div 
         className="cursor-pointer" 
         onClick={() => onTaskToggle(task.id, !task.completed)}
@@ -57,7 +63,7 @@ const TaskCard = ({ task, onTaskToggle }: TaskCardProps) => {
         </div>
       </div>
       {!task.completed && (
-        <div className={`${priorityColors[task.priority]} flex items-center gap-1`}>
+        <div className={`flex items-center gap-1 ${priorityTextColors[task.priority]} px-2 py-1 rounded-full ${priorityColors[task.priority]}`}>
           {task.priority === 'high' && <AlertCircle size={14} />}
           <span className="text-xs font-medium">
             {task.priority.charAt(0).toUpperCase() + task.priority.slice(1)}

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import StatCard from '../components/dashboard/StatCard';
@@ -122,39 +123,39 @@ const Index = () => {
         <StatCard 
           title="Total Patients" 
           value="128" 
-          icon={<User size={24} className="text-doctor-purple" />} 
-          change={{ value: 4, isPositive: true }}
+          icon={<User size={24} className="text-blue-600" />} 
+          iconBg="bg-blue-100 dark:bg-blue-900/30"
         />
         <StatCard 
           title="Appointments Today" 
           value="8" 
-          icon={<Calendar size={24} className="text-doctor-bright-blue" />} 
-          iconBg="bg-doctor-bright-blue/10"
+          icon={<Calendar size={24} className="text-purple-600" />} 
+          iconBg="bg-purple-100 dark:bg-purple-900/30"
         />
         <StatCard 
           title="Tasks Pending" 
           value="5" 
-          icon={<CheckSquare size={24} className="text-orange-500" />} 
-          iconBg="bg-orange-100"
+          icon={<CheckSquare size={24} className="text-amber-600" />} 
+          iconBg="bg-amber-100 dark:bg-amber-900/30"
         />
         <StatCard 
           title="On Call Hours" 
           value="3:45" 
           icon={<Clock size={24} className="text-green-600" />} 
-          iconBg="bg-green-100"
+          iconBg="bg-green-100 dark:bg-green-900/30"
         />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl shadow overflow-hidden">
+            <div className="bg-white dark:bg-card rounded-xl shadow overflow-hidden hover:shadow-md transition-all duration-300">
               <div className="px-4 py-3 border-b flex justify-between items-center">
                 <h2 className="font-semibold flex items-center gap-2">
-                  <Calendar size={16} className="text-doctor-purple" />
+                  <Calendar size={16} className="text-purple-600 dark:text-purple-400" />
                   Today's Appointments
                 </h2>
-                <button className="text-sm text-doctor-purple hover:underline">
+                <button className="text-sm text-primary hover:underline">
                   View all
                 </button>
               </div>
@@ -165,24 +166,24 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-xl shadow overflow-hidden">
+            <div className="bg-white dark:bg-card rounded-xl shadow overflow-hidden hover:shadow-md transition-all duration-300">
               <div className="px-4 py-3 border-b flex justify-between items-center">
                 <h2 className="font-semibold flex items-center gap-2">
-                  <AlertCircle size={16} className="text-doctor-alert-red" />
+                  <AlertCircle size={16} className="text-red-600 dark:text-red-400" />
                   Critical Alerts
                 </h2>
-                <button className="text-sm text-doctor-purple hover:underline">
+                <button className="text-sm text-primary hover:underline">
                   View all
                 </button>
               </div>
               <div className="p-4">
-                <div className="p-3 border rounded-lg mb-3 bg-doctor-alert-red/10 border-doctor-alert-red/20">
+                <div className="p-3 border rounded-lg mb-3 bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-900/30">
                   <div className="font-medium">Abnormal Lab Result</div>
                   <div className="text-sm text-doctor-neutral-gray">James Wilson - Critical potassium levels</div>
                   <div className="text-xs text-doctor-neutral-gray mt-1">15 minutes ago</div>
                 </div>
                 
-                <div className="p-3 border rounded-lg bg-yellow-50 border-yellow-200">
+                <div className="p-3 border rounded-lg bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-900/30">
                   <div className="font-medium">Medication Alert</div>
                   <div className="text-sm text-doctor-neutral-gray">Emily Carter - Possible drug interaction</div>
                   <div className="text-xs text-doctor-neutral-gray mt-1">1 hour ago</div>
@@ -191,13 +192,13 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="bg-white rounded-xl shadow mt-6 overflow-hidden">
+          <div className="bg-white dark:bg-card rounded-xl shadow mt-6 overflow-hidden hover:shadow-md transition-all duration-300">
             <div className="px-4 py-3 border-b flex justify-between items-center">
               <h2 className="font-semibold flex items-center gap-2">
-                <CheckSquare size={16} className="text-doctor-purple" />
+                <CheckSquare size={16} className="text-amber-600 dark:text-amber-400" />
                 Tasks
               </h2>
-              <button className="text-sm text-doctor-purple hover:underline">
+              <button className="text-sm text-primary hover:underline">
                 View all
               </button>
             </div>
@@ -211,7 +212,7 @@ const Index = () => {
               ))}
             </div>
             <div className="px-4 py-3 border-t">
-              <button className="text-doctor-purple hover:underline text-sm font-medium">
+              <button className="text-primary hover:underline text-sm font-medium">
                 + Add New Task
               </button>
             </div>
@@ -219,10 +220,10 @@ const Index = () => {
         </div>
         
         <div>
-          <div className="bg-white rounded-xl shadow overflow-hidden">
+          <div className="bg-white dark:bg-card rounded-xl shadow overflow-hidden hover:shadow-md transition-all duration-300">
             <div className="px-4 py-3 border-b flex justify-between items-center">
               <h2 className="font-semibold flex items-center gap-2">
-                <FileText size={16} className="text-doctor-purple" />
+                <FileText size={16} className="text-blue-600 dark:text-blue-400" />
                 Recent Activity
               </h2>
             </div>
@@ -231,11 +232,11 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-doctor-purple to-doctor-purple/80 text-white rounded-xl shadow mt-6 p-6">
+          <div className="bg-sidebar text-white rounded-xl shadow mt-6 p-6 hover:shadow-md transition-all duration-300">
             <div className="flex items-start justify-between">
               <div>
-                <h3 className="font-semibold text-lg">Try AskAI Assistant</h3>
-                <p className="text-white/80 text-sm mt-1">Get quick answers to your clinical questions</p>
+                <h3 className="font-semibold text-lg text-white">Try AskAI Assistant</h3>
+                <p className="text-white/90 text-sm mt-1">Get quick answers to your clinical questions</p>
               </div>
               <div className="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center">
                 <MessageCircle size={18} className="text-white" />
@@ -243,13 +244,13 @@ const Index = () => {
             </div>
             
             <div className="mt-4 space-y-2">
-              <button className="bg-white/10 w-full text-left p-2 rounded-lg text-sm hover:bg-white/20 transition-colors">
+              <button className="bg-white/20 w-full text-left p-2 rounded-lg text-sm hover:bg-white/30 transition-colors text-white">
                 🔍 Show my patient list for today
               </button>
-              <button className="bg-white/10 w-full text-left p-2 rounded-lg text-sm hover:bg-white/20 transition-colors">
+              <button className="bg-white/20 w-full text-left p-2 rounded-lg text-sm hover:bg-white/30 transition-colors text-white">
                 💊 Suggest treatment for hypertension
               </button>
-              <button className="bg-white/10 w-full text-left p-2 rounded-lg text-sm hover:bg-white/20 transition-colors">
+              <button className="bg-white/20 w-full text-left p-2 rounded-lg text-sm hover:bg-white/30 transition-colors text-white">
                 📊 Summarize Emily's recent labs
               </button>
             </div>

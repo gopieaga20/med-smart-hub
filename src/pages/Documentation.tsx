@@ -1,9 +1,22 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import { FileText, Edit, Trash, Check, ArrowUp, ArrowDown } from 'lucide-react';
 
 const Documentation = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const patientIdFromUrl = queryParams.get('patientId');
+  
+  const [selectedPatientId, setSelectedPatientId] = useState(patientIdFromUrl || '');
+  
+  useEffect(() => {
+    if (patientIdFromUrl) {
+      setSelectedPatientId(patientIdFromUrl);
+    }
+  }, [patientIdFromUrl]);
+
   return (
     <Layout>
       <div className="mb-6">
@@ -13,7 +26,7 @@ const Documentation = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-1">
-          <div className="bg-white rounded-xl shadow overflow-hidden">
+          <div className="bg-white dark:bg-card rounded-xl shadow overflow-hidden hover:shadow-md transition-all duration-300">
             <div className="px-4 py-3 border-b flex justify-between items-center">
               <h2 className="font-semibold">Patient Selection</h2>
             </div>
@@ -22,33 +35,45 @@ const Documentation = () => {
                 <input
                   type="search"
                   placeholder="Search patients..."
-                  className="w-full pl-3 pr-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-doctor-purple focus:border-transparent"
+                  className="w-full pl-3 pr-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
               </div>
               
               <div className="space-y-2 max-h-[500px] overflow-y-auto">
-                <div className="p-3 border rounded-lg cursor-pointer hover:bg-doctor-light-gray card-hover bg-doctor-light-purple/20">
+                <div 
+                  className={`p-3 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-all ${selectedPatientId === 'P001' ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800/30' : ''}`}
+                  onClick={() => setSelectedPatientId('P001')}
+                >
                   <div className="font-medium">James Wilson</div>
                   <div className="text-sm text-doctor-neutral-gray">45 yrs • Male • ID: P001</div>
-                  <div className="text-xs text-doctor-purple mt-1">Admitted • Cardiology</div>
+                  <div className="text-xs text-blue-600 dark:text-blue-400 mt-1">Admitted • Cardiology</div>
                 </div>
                 
-                <div className="p-3 border rounded-lg cursor-pointer hover:bg-doctor-light-gray card-hover">
+                <div 
+                  className={`p-3 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-all ${selectedPatientId === 'P002' ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800/30' : ''}`}
+                  onClick={() => setSelectedPatientId('P002')}
+                >
                   <div className="font-medium">Emily Carter</div>
                   <div className="text-sm text-doctor-neutral-gray">62 yrs • Female • ID: P002</div>
-                  <div className="text-xs text-blue-600 mt-1">Outpatient • Endocrinology</div>
+                  <div className="text-xs text-blue-600 dark:text-blue-400 mt-1">Outpatient • Endocrinology</div>
                 </div>
                 
-                <div className="p-3 border rounded-lg cursor-pointer hover:bg-doctor-light-gray card-hover">
+                <div 
+                  className={`p-3 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-all ${selectedPatientId === 'P003' ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800/30' : ''}`}
+                  onClick={() => setSelectedPatientId('P003')}
+                >
                   <div className="font-medium">Robert Lee</div>
                   <div className="text-sm text-doctor-neutral-gray">38 yrs • Male • ID: P003</div>
-                  <div className="text-xs text-green-600 mt-1">Discharged • Orthopedics</div>
+                  <div className="text-xs text-green-600 dark:text-green-400 mt-1">Discharged • Orthopedics</div>
                 </div>
                 
-                <div className="p-3 border rounded-lg cursor-pointer hover:bg-doctor-light-gray card-hover">
+                <div 
+                  className={`p-3 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-all ${selectedPatientId === 'P004' ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800/30' : ''}`}
+                  onClick={() => setSelectedPatientId('P004')}
+                >
                   <div className="font-medium">Maria Garcia</div>
                   <div className="text-sm text-doctor-neutral-gray">53 yrs • Female • ID: P004</div>
-                  <div className="text-xs text-blue-600 mt-1">Outpatient • Neurology</div>
+                  <div className="text-xs text-blue-600 dark:text-blue-400 mt-1">Outpatient • Neurology</div>
                 </div>
               </div>
             </div>
@@ -57,12 +82,12 @@ const Documentation = () => {
         
         <div className="lg:col-span-2">
           <div className="flex gap-3 mb-4">
-            <button className="px-4 py-2 bg-doctor-purple text-white rounded-lg hover:bg-doctor-purple/90 transition-colors flex items-center gap-2">
+            <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2">
               <FileText size={16} />
               <span>New Note</span>
             </button>
             
-            <button className="px-4 py-2 bg-white border rounded-lg hover:bg-doctor-light-gray transition-colors flex items-center gap-2">
+            <button className="px-4 py-2 bg-white dark:bg-gray-800 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center gap-2">
               <div className="flex items-center gap-1">
                 <ArrowUp size={14} />
                 <ArrowDown size={14} />
@@ -71,9 +96,9 @@ const Documentation = () => {
             </button>
           </div>
           
-          <div className="bg-white rounded-xl shadow overflow-hidden">
+          <div className="bg-white dark:bg-card rounded-xl shadow overflow-hidden hover:shadow-md transition-all duration-300">
             <div className="px-4 py-3 border-b flex justify-between items-center">
-              <h2 className="font-semibold">James Wilson's Documentation</h2>
+              <h2 className="font-semibold">{selectedPatientId ? `${selectedPatientId === 'P001' ? 'James Wilson' : selectedPatientId === 'P002' ? 'Emily Carter' : selectedPatientId === 'P003' ? 'Robert Lee' : selectedPatientId === 'P004' ? 'Maria Garcia' : 'Patient'}'s Documentation` : 'Patient Documentation'}</h2>
             </div>
             
             <div className="p-6">
@@ -83,11 +108,11 @@ const Documentation = () => {
                   <div className="text-sm text-doctor-neutral-gray">May 21, 2025 at 9:15 AM</div>
                 </div>
                 <div className="flex gap-2">
-                  <button className="p-1 hover:bg-doctor-light-gray rounded-full">
-                    <Edit size={16} className="text-doctor-purple" />
+                  <button className="p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
+                    <Edit size={16} className="text-primary" />
                   </button>
-                  <button className="p-1 hover:bg-doctor-light-gray rounded-full">
-                    <Trash size={16} className="text-doctor-alert-red" />
+                  <button className="p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
+                    <Trash size={16} className="text-destructive" />
                   </button>
                 </div>
               </div>
@@ -135,7 +160,7 @@ const Documentation = () => {
                 <div className="text-sm text-doctor-neutral-gray">
                   <span className="font-medium">Updated by:</span> Dr. Sarah Johnson
                 </div>
-                <button className="text-doctor-purple flex items-center gap-1 text-sm">
+                <button className="text-primary flex items-center gap-1 text-sm">
                   <Check size={14} />
                   <span>Sign & Lock Note</span>
                 </button>

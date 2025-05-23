@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import PatientSearch from '../components/dashboard/PatientSearch';
 
@@ -43,7 +44,7 @@ const Patients = () => {
         <PatientSearch />
       </div>
 
-      <div className="grid-outline bg-card">
+      <div className="grid-outline bg-card hover:shadow-lg transition-all duration-300">
         <div className="overflow-x-auto">
           <table className="min-w-full">
             <thead>
@@ -97,8 +98,12 @@ const Patients = () => {
                     </span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <button className="text-snapdoc-blue hover:text-snapdoc-blue/80 mr-3">View</button>
-                    <button className="text-snapdoc-blue hover:text-snapdoc-blue/80">Notes</button>
+                    <Link to={`/patient-report/${patient.id}`} className="text-primary hover:text-primary/80 mr-3">
+                      View
+                    </Link>
+                    <Link to={`/documentation?patientId=${patient.id}`} className="text-primary hover:text-primary/80">
+                      Notes
+                    </Link>
                   </td>
                 </tr>
               ))}
@@ -111,10 +116,10 @@ const Patients = () => {
           </div>
           <div className="flex gap-2">
             <button className="px-3 py-1 border border-snapdoc-blue/20 rounded text-sm" disabled>Previous</button>
-            <button className="px-3 py-1 border border-snapdoc-blue/20 rounded text-sm bg-snapdoc-blue text-white">1</button>
-            <button className="px-3 py-1 border border-snapdoc-blue/20 rounded text-sm hover:bg-snapdoc-blue/10">2</button>
-            <button className="px-3 py-1 border border-snapdoc-blue/20 rounded text-sm hover:bg-snapdoc-blue/10">3</button>
-            <button className="px-3 py-1 border border-snapdoc-blue/20 rounded text-sm hover:bg-snapdoc-blue/10">Next</button>
+            <button className="px-3 py-1 border border-snapdoc-blue/20 rounded text-sm bg-primary text-white">1</button>
+            <button className="px-3 py-1 border border-snapdoc-blue/20 rounded text-sm hover:bg-primary/10">2</button>
+            <button className="px-3 py-1 border border-snapdoc-blue/20 rounded text-sm hover:bg-primary/10">3</button>
+            <button className="px-3 py-1 border border-snapdoc-blue/20 rounded text-sm hover:bg-primary/10">Next</button>
           </div>
         </div>
       </div>
