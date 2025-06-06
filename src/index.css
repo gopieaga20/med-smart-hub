@@ -5,83 +5,83 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --background: 28 25% 97%;
+    --foreground: 28 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 28 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 28 25% 12%;
 
-    --primary: 210 79% 46%;
+    --primary: 25 75% 35%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 28 25% 90%;
+    --secondary-foreground: 28 25% 12%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 28 25% 90%;
+    --muted-foreground: 28 25% 45%;
 
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 28 25% 90%;
+    --accent-foreground: 28 25% 12%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 28 25% 97%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 210 79% 46%;
+    --border: 28 25% 85%;
+    --input: 28 25% 85%;
+    --ring: 25 75% 35%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 210 79% 46%;
+    --sidebar-background: 25 75% 35%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 210 79% 46%;
+    --sidebar-primary: 25 75% 35%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 199 89% 92%;
-    --sidebar-accent-foreground: 210 79% 46%;
-    --sidebar-border: 199 89% 84%;
-    --sidebar-ring: 199 89% 84%;
+    --sidebar-accent: 25 50% 85%;
+    --sidebar-accent-foreground: 25 75% 35%;
+    --sidebar-border: 25 50% 75%;
+    --sidebar-ring: 25 50% 75%;
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 28 25% 8%;
+    --foreground: 28 25% 95%;
 
-    --card: 222 47% 15%;
-    --card-foreground: 210 40% 98%;
+    --card: 28 25% 12%;
+    --card-foreground: 28 25% 95%;
 
-    --popover: 222 47% 13%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 28 25% 10%;
+    --popover-foreground: 28 25% 95%;
 
-    --primary: 210 79% 46%;
+    --primary: 25 75% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 32% 25%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 28 25% 20%;
+    --secondary-foreground: 28 25% 95%;
 
-    --muted: 217 32% 20%;
-    --muted-foreground: 215 16% 75%;
+    --muted: 28 25% 15%;
+    --muted-foreground: 28 25% 70%;
 
-    --accent: 217 32% 25%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 28 25% 20%;
+    --accent-foreground: 28 25% 95%;
 
     --destructive: 0 62% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 28 25% 95%;
 
-    --border: 217 32% 25%;
-    --input: 217 32% 25%;
-    --ring: 210 79% 50%;
+    --border: 28 25% 20%;
+    --input: 28 25% 20%;
+    --ring: 25 75% 50%;
     
-    --sidebar-background: 222 47% 11%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 210 79% 46%;
+    --sidebar-background: 28 25% 8%;
+    --sidebar-foreground: 28 25% 95%;
+    --sidebar-primary: 25 75% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 217 32% 25%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217 32% 25%;
-    --sidebar-ring: 210 79% 50%;
+    --sidebar-accent: 28 25% 20%;
+    --sidebar-accent-foreground: 28 25% 95%;
+    --sidebar-border: 28 25% 20%;
+    --sidebar-ring: 25 75% 50%;
   }
 }
 
@@ -106,20 +106,20 @@
   }
   
   .stat-value {
-    @apply text-2xl font-semibold text-gray-800 dark:text-white;
+    @apply text-2xl font-semibold text-foreground;
   }
   
   .stat-label {
-    @apply text-sm text-gray-600 dark:text-gray-300;
+    @apply text-sm text-muted-foreground;
   }
   
-  /* Status colors with improved visibility */
+  /* Status colors with brown theme */
   .status-scheduled {
-    @apply bg-blue-100 text-blue-800 dark:bg-blue-900/70 dark:text-blue-200;
+    @apply bg-amber-100 text-amber-800 dark:bg-amber-900/70 dark:text-amber-200;
   }
   
   .status-in-progress {
-    @apply bg-primary/20 text-primary dark:bg-primary/30 dark:text-blue-200;
+    @apply bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary-foreground;
   }
   
   .status-completed {
@@ -131,11 +131,11 @@
   }
   
   .status-stable {
-    @apply text-blue-700 dark:text-blue-300;
+    @apply text-green-700 dark:text-green-300;
   }
   
   .status-improving {
-    @apply text-green-700 dark:text-green-300;
+    @apply text-emerald-700 dark:text-emerald-300;
   }
   
   .status-recovered {
@@ -159,7 +159,7 @@
     @apply bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-200;
   }
 
-  /* Grid outlines with better visibility */
+  /* Grid outlines with brown theme */
   .grid-outline {
     @apply border-2 border-primary/30 dark:border-primary/40 rounded-xl overflow-hidden shadow-md;
   }
@@ -169,74 +169,14 @@
   }
   
   table th, table td {
-    @apply border-primary/20 dark:border-primary/30 border-b text-gray-800 dark:text-gray-200;
+    @apply border-primary/20 dark:border-primary/30 border-b text-foreground;
   }
   
   table thead {
-    @apply bg-primary/10 dark:bg-primary/20 text-gray-700 dark:text-gray-200;
+    @apply bg-primary/10 dark:bg-primary/20 text-foreground;
   }
 
-  /* Dark mode specific adjustments */
-  .dark .bg-white {
-    @apply bg-card;
-  }
-
-  .dark .border {
-    @apply border-primary/30;
-  }
-  
-  .dark .text-doctor-neutral-gray {
-    @apply text-gray-300;
-  }
-  
-  /* Analytics page specific fixes */
-  .dark .text-gray-500,
-  .dark .text-doctor-neutral-gray {
-    @apply text-gray-300;
-  }
-  
-  .dark .text-2xl.font-bold,
-  .dark h3.font-bold,
-  .dark h4.font-medium {
-    @apply text-white;
-  }
-  
-  .dark ul li {
-    @apply text-gray-300;
-  }
-
-  /* Tasks page specific fixes */
-  .dark .text-doctor-alert-red {
-    @apply text-red-400;
-  }
-  
-  .dark .text-orange-500 {
-    @apply text-amber-400;
-  }
-  
-  .dark .text-doctor-bright-blue {
-    @apply text-blue-400;
-  }
-  
-  /* Card headers for task priorities */
-  .dark .bg-red-50 {
-    @apply bg-red-900/30 text-red-200;
-  }
-  
-  .dark .bg-orange-50,
-  .dark .bg-yellow-50 {
-    @apply bg-amber-900/30 text-amber-200;
-  }
-  
-  .dark .bg-blue-50 {
-    @apply bg-blue-900/30 text-blue-200;
-  }
-  
-  .dark .bg-green-50 {
-    @apply bg-green-900/30 text-green-200;
-  }
-
-  /* AskAI Interface Styles with improved visibility */
+  /* AskAI Interface Styles with brown theme */
   .askai-bg {
     @apply bg-gradient-to-br from-primary to-primary/80;
   }
@@ -246,27 +186,28 @@
   }
   
   .askai-user-message {
-    @apply bg-primary/20 dark:bg-primary/30 rounded-lg p-3 max-w-[80%] text-gray-800 dark:text-gray-100;
+    @apply bg-primary/20 dark:bg-primary/30 rounded-lg p-3 max-w-[80%] text-foreground;
   }
   
   .askai-ai-message {
-    @apply bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-3 max-w-[80%] shadow-sm text-gray-800 dark:text-white;
+    @apply bg-card border border-border rounded-lg p-3 max-w-[80%] shadow-sm text-foreground;
+  }
+
+  /* Dashboard grid tile highlighting */
+  .dashboard-tile {
+    @apply border border-primary/20 rounded-xl p-4 shadow bg-card hover:shadow-lg hover:border-primary/40 transition-all duration-300 hover:-translate-y-1;
+  }
+
+  /* Critical alerts styling */
+  .alert-high {
+    @apply bg-red-50 border-l-4 border-red-500 dark:bg-red-900/20 dark:border-red-400;
   }
   
-  /* Analytics page weekly overview card fixes */
-  .dark .bg-purple-50 {
-    @apply bg-purple-900/30 text-purple-200;
+  .alert-medium {
+    @apply bg-amber-50 border-l-4 border-amber-500 dark:bg-amber-900/20 dark:border-amber-400;
   }
   
-  .dark .bg-pink-50 {
-    @apply bg-pink-900/30 text-pink-200;
-  }
-  
-  .dark .bg-blue-50 {
-    @apply bg-blue-900/30 text-blue-200;
-  }
-  
-  .dark .bg-gray-50 {
-    @apply bg-gray-800 text-gray-200;
+  .alert-low {
+    @apply bg-blue-50 border-l-4 border-blue-500 dark:bg-blue-900/20 dark:border-blue-400;
   }
 }

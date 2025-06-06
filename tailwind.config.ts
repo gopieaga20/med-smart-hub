@@ -63,16 +63,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-        snapdoc: {
-          'blue': '#1E67B9',
-          'red': '#E54C4C',
-          'green': '#14B37D',
-          'yellow': '#F5B14C',
-          'dark': '#172B4D',
-          'card': '#2d2d2d',
-          'light-gray': '#F1F1F1',
-          'neutral-gray': '#637283',
-          'alert-red': '#E54C4C'
+        medical: {
+          'brown': '#8B4513',
+          'tan': '#D2B48C',
+          'cream': '#F5F5DC',
+          'coffee': '#6F4E37',
+          'cognac': '#9A3B00',
+          'mahogany': '#C04000',
+          'copper': '#B87333',
+          'bronze': '#CD7F32',
+          'amber': '#FFBF00',
+          'gold': '#FFD700'
         }
 			},
 			borderRadius: {
